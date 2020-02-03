@@ -1,12 +1,3 @@
-#-------------------------------------------------------------------------------
-# lexer.py
-#
-# A generic regex-based Lexer/tokenizer tool.
-# See the if __main__ section in the bottom for an example.
-#
-# Eli Bendersky (eliben@gmail.com)
-# This code is in the public domain
-#-------------------------------------------------------------------------------
 import re
 import sys
 
@@ -26,7 +17,6 @@ class Token(object):
 
 class LexerError(Exception):
     """ Lexer error exception.
-
         pos:
             Position in the input line where the error occurred.
     """
@@ -36,18 +26,15 @@ class LexerError(Exception):
 
 class Lexer(object):
     """ A simple regex-based lexer/tokenizer.
-
         See below for an example of usage.
     """
     def __init__(self, rules, skip_whitespace=True):
         """ Create a lexer.
-
             rules:
                 A list of rules. Each rule is a `regex, type`
                 pair, where `regex` is the regular expression used
                 to recognize the token and `type` is the type
                 of the token to return when it's recognized.
-
             skip_whitespace:
                 If True, whitespace (\s+) will be skipped and not
                 reported by the lexer. Otherwise, you have to
@@ -113,7 +100,7 @@ class Lexer(object):
     def tokens(self):
         """ Returns an iterator to the tokens found in the buffer.
         """
-        while 1:
+        while True:
             tok = self.token()
             if tok is None: break
             yield tok

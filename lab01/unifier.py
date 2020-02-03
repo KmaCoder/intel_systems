@@ -1,5 +1,5 @@
 # Python 3.6
-from lab01 import lexer
+import lab01.lexer as lexer
 
 
 class Term:
@@ -11,8 +11,8 @@ class Term:
 # variable functions by envisioning an apply(FUNCNAME, ... args ...).
 class App(Term):
     def __init__(self, fname, args=()):
-       self.fname = fname
-       self.args = args
+        self.fname = fname
+        self.args = args
 
     def __str__(self):
         return '{0}({1})'.format(self.fname, ','.join(map(str, self.args)))
@@ -21,6 +21,9 @@ class App(Term):
         return (type(self) == type(other) and
                 self.fname == other.fname and
                 all(self.args[i] == other.args[i] for i in range(len(self.args))))
+
+    def __len__(self):
+        return len(self.__str__())
 
     __repr__ = __str__
 
@@ -62,18 +65,18 @@ def parse_term(s):
 
 class TermParser:
     """Term parser.
-
     Use the top-level parse_term() instead of instantiating this class directly.
     """
+
     def __init__(self, text):
         self.text = text
         self.cur_token = None
         lexrules = (
-            ('\d+',             'NUMBER'),
-            ('[a-zA-Z_]\w*',    'ID'),
-            (',',               'COMMA'),
-            ('\(',              'LP'),
-            ('\)',              'RP'),
+            ('\d+', 'NUMBER'),
+            ('[a-zA-Z_]\w*', 'ID'),
+            (',', 'COMMA'),
+            ('\(', 'LP'),
+            ('\)', 'RP'),
         )
         self.lexer = lexer.Lexer(lexrules, skip_whitespace=True)
         self.lexer.input(text)
@@ -128,7 +131,6 @@ class TermParser:
 
 def occurs_check(v, term, subst):
     """Does the variable v occur anywhere inside term?
-
     Variables in term are looked up in subst and the check is applied
     recursively.
     """
@@ -145,7 +147,6 @@ def occurs_check(v, term, subst):
 
 def unify(x, y, subst):
     """Unifies term x and y with initial subst.
-
     Returns a subst (map of name->term) that unifies x and y, or None if
     they can't be unified. Pass subst={} if no subst are initially
     known. Note that {} means valid (but empty) subst.
@@ -171,7 +172,7 @@ def unify(x, y, subst):
 
 def apply_unifier(x, subst):
     """Applies the unifier subst to term x.
-    
+
     Returns a term where all occurrences of variables bound in subst
     were replaced (recursively); on failure returns None.
     """
@@ -195,7 +196,6 @@ def apply_unifier(x, subst):
 
 def unify_variable(v, x, subst):
     """Unifies variable v with term x, using subst.
-
     Returns updated subst or None on failure.
     """
     assert isinstance(v, Var)
@@ -210,11 +210,41 @@ def unify_variable(v, x, subst):
         return {**subst, v.name: x}
 
 
+def create_test_case(size: int) -> (str, str):
+    """
+    h(x1, x2, …, xn, f(y0, y0), …, f(yn-1, yn-1), yn)
+    h(f(x0, x0), f(x1, x1), …, f(xn-1, xn-1), y1, …, yn, xn)
+    1. get a string of X's with indices [1, size]
+    2.
+    """
+    xs = [f"X{i + 1}" for i in range(size)]
+    xs_str = ",".join(xs)
+    fs = [f"f(Y{i},Y{i})" for i in range(size)]
+    fs_str = ",".join(fs)
+    yn = f"Y{size}"
+    h1 = f"h({xs_str},{fs_str},{yn})"
+
+    fs = [f"f(X{i},X{i})" for i in range(size)]
+    fs_str = ",".join(fs)
+    ys = [f"Y{i + 1}" for i in range(size)]
+    ys_str = ",".join(ys)
+    xn = f"X{size}"
+    h2 = f"h({fs_str},{ys_str},{xn})"
+    return h1, h2
+
+
 if __name__ == '__main__':
-    s1 = 'f(X,h(X),Y,g(Y))'
-    s2 = 'f(g(Z),W,Z,X)'
-    subst = unify(parse_term(s1), parse_term(s2), {})
+    s1, s2 = create_test_case(23)
+    # s1 = "h(X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,f(Y0,Y0),f(Y1,Y1),f(Y2,Y2),f(Y3,Y3),f(Y4,Y4),f(Y5,Y5),f(Y6,Y6),f(Y7,Y7),f(Y8,Y8),f(Y9,Y9),Y10)"
+    # s2 = "h(f(X0,X0),f(X1,X1),f(X2,X2),f(X3,X3),f(X4,X4),f(X5,X5),f(X6,X6),f(X7,X7),f(X8,X8),f(X9,X9),Y1,Y2,Y3,Y4,Y5,Y6,Y7,Y8,Y9,Y10,X10)"
+
+    print(s1, s2, sep="\n")
+
+    s1_parsed = parse_term(s1)
+    s2_parsed = parse_term(s2)
+    subst = unify(s1_parsed, s2_parsed, {})
     print(subst)
 
-    print(apply_unifier(parse_term(s1), subst))
-    print(apply_unifier(parse_term(s2), subst))
+    u1 = apply_unifier(s1_parsed, subst)
+    u2 = apply_unifier(s2_parsed, subst)
+    print(u1 == u2, len(u1))
