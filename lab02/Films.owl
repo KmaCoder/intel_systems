@@ -1,0 +1,663 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/kmacoder/ontologies/2020/untitled-ontology-3"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/kmacoder/ontologies/2020/untitled-ontology-3">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AndreiTarkovsky"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Avatar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlackComedy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ColumbiaPictures"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comedy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Detectiv"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DjangoUnchained"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Documentary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drama"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Film"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GuillermoDelToro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GuyRitchie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#JamesCameron"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Low"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Melodrama"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mosfilm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetflixOriginal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paramount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Producer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QuentinTarantino"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SciFi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShapeOfWater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Snatch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Solaris"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sony"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Studio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Titanic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Triller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Universal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Western"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGenre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProducer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStudio"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProducerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStudioOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTheSameFilm"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Rating"/>
+        <ObjectUnionOf>
+            <Class IRI="#High"/>
+            <Class IRI="#Low"/>
+            <Class IRI="#Medium"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AndreiTarkovsky"/>
+        <Class IRI="#Producer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Avatar"/>
+        <Class IRI="#Film"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Avatar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#SciFi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Avatar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#JamesCameron"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Avatar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Avatar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#Fox"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlackComedy"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ColumbiaPictures"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Comedy"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Detectiv"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <Class IRI="#Film"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#BlackComedy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Drama"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Western"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#QuentinTarantino"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DjangoUnchained"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#ColumbiaPictures"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Documentary"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drama"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fox"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GuillermoDelToro"/>
+        <Class IRI="#Producer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GuyRitchie"/>
+        <Class IRI="#Producer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#High"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#JamesCameron"/>
+        <Class IRI="#Producer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Low"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medium"/>
+        <Class IRI="#Rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Melodrama"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mosfilm"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetflixOriginal"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Paramount"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QuentinTarantino"/>
+        <Class IRI="#Producer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SciFi"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShapeOfWater"/>
+        <Class IRI="#Film"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShapeOfWater"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Drama"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShapeOfWater"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Triller"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShapeOfWater"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#GuillermoDelToro"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShapeOfWater"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShapeOfWater"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#Fox"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <Class IRI="#Film"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Comedy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Triller"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#GuyRitchie"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Snatch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#Sony"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solaris"/>
+        <Class IRI="#Film"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solaris"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Drama"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solaris"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#SciFi"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solaris"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#AndreiTarkovsky"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solaris"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Solaris"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#Mosfilm"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sony"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanic"/>
+        <Class IRI="#Film"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Drama"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProducer"/>
+            <Class IRI="#JamesCameron"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="#High"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#Fox"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Titanic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasStudio"/>
+            <Class IRI="#Paramount"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Triller"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Universal"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WB"/>
+        <Class IRI="#Studio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Western"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AndreiTarkovsky"/>
+        <Class IRI="#GuillermoDelToro"/>
+        <Class IRI="#GuyRitchie"/>
+        <Class IRI="#JamesCameron"/>
+        <Class IRI="#QuentinTarantino"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BlackComedy"/>
+        <Class IRI="#Comedy"/>
+        <Class IRI="#Detectiv"/>
+        <Class IRI="#Documentary"/>
+        <Class IRI="#Drama"/>
+        <Class IRI="#Melodrama"/>
+        <Class IRI="#SciFi"/>
+        <Class IRI="#Triller"/>
+        <Class IRI="#Western"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ColumbiaPictures"/>
+        <Class IRI="#Fox"/>
+        <Class IRI="#Mosfilm"/>
+        <Class IRI="#NetflixOriginal"/>
+        <Class IRI="#Paramount"/>
+        <Class IRI="#Sony"/>
+        <Class IRI="#Universal"/>
+        <Class IRI="#WB"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ColumbiaPictures"/>
+        <Class IRI="#Fox"/>
+        <Class IRI="#Mosfilm"/>
+        <Class IRI="#NetflixOriginal"/>
+        <Class IRI="#Paramount"/>
+        <Class IRI="#Universal"/>
+        <Class IRI="#WB"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ColumbiaPictures"/>
+        <Class IRI="#Fox"/>
+        <Class IRI="#NetflixOriginal"/>
+        <Class IRI="#Paramount"/>
+        <Class IRI="#Universal"/>
+        <Class IRI="#WB"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Comedy"/>
+        <Class IRI="#Detectiv"/>
+        <Class IRI="#Documentary"/>
+        <Class IRI="#Drama"/>
+        <Class IRI="#Melodrama"/>
+        <Class IRI="#SciFi"/>
+        <Class IRI="#Triller"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Film"/>
+        <Class IRI="#Genre"/>
+        <Class IRI="#Producer"/>
+        <Class IRI="#Rating"/>
+        <Class IRI="#Studio"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Fox"/>
+        <Class IRI="#NetflixOriginal"/>
+        <Class IRI="#Paramount"/>
+        <Class IRI="#Universal"/>
+        <Class IRI="#WB"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#High"/>
+        <Class IRI="#Low"/>
+        <Class IRI="#Medium"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGenre"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProducer"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRating"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasStudio"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProducerOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isStudioOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProducer"/>
+        <ObjectProperty IRI="#isProducerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasStudio"/>
+        <ObjectProperty IRI="#isStudioOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasGenre"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasProducer"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRating"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasStudio"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isProducerOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isStudioOf"/>
+    </InverseFunctionalObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isTheSameFilm"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Film"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProducer"/>
+        <Class IRI="#Film"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="#Film"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStudio"/>
+        <Class IRI="#Film"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTheSameFilm"/>
+        <Class IRI="#Film"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProducer"/>
+        <Class IRI="#Producer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="#Rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStudio"/>
+        <Class IRI="#Studio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTheSameFilm"/>
+        <Class IRI="#Film"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

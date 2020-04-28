@@ -234,7 +234,8 @@ def create_test_case(size: int) -> (str, str):
 
 
 if __name__ == '__main__':
-    s1, s2 = create_test_case(23)
+    s1, s2 = create_test_case(20)
+    # s2 = s2.replace('Y2', 'Y1')
     # s1 = "h(X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,f(Y0,Y0),f(Y1,Y1),f(Y2,Y2),f(Y3,Y3),f(Y4,Y4),f(Y5,Y5),f(Y6,Y6),f(Y7,Y7),f(Y8,Y8),f(Y9,Y9),Y10)"
     # s2 = "h(f(X0,X0),f(X1,X1),f(X2,X2),f(X3,X3),f(X4,X4),f(X5,X5),f(X6,X6),f(X7,X7),f(X8,X8),f(X9,X9),Y1,Y2,Y3,Y4,Y5,Y6,Y7,Y8,Y9,Y10,X10)"
 
